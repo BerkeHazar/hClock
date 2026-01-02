@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+}
+
+:root {
+  /* Liquid Glass - Light Mode Default */
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  
+  --text-primary: #1f2937; /* gray-800 */
+  --text-secondary: #4b5563; /* gray-600 */
+  --accent-color: #3b82f6; /* blue-500 */
+}
+
+.dark {
+  /* Liquid Glass - Dark Mode */
+  --glass-bg: rgba(20, 20, 20, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  
+  --text-primary: #f9fafb; /* gray-50 */
+  --text-secondary: #9ca3af; /* gray-400 */
+  --accent-color: #60a5fa; /* blue-400 */
+}
+
+body {
+  font-family: var(--font-sans);
+  margin: 0;
+  min-height: 100vh;
+  /* Start with a neutral background, will be overridden by the Background component */
+  background: linear-gradient(135deg, #e0e7ff 0%, #fae8ff 100%);
+}
+
+.dark body {
+  background: linear-gradient(135deg, #111827 0%, #1e1b4b 100%);
+}
+
+/* Utility class for Glass Effect */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
